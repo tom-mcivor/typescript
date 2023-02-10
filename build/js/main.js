@@ -1,67 +1,23 @@
 "use strict";
-// Type Aliases
-// literal types
-let myName;
-let userName;
-userName = 'Amy';
-// functions 
-const add = (a, b) => {
-    return a + b;
+// convert to more or less specific
+let a = 'hello';
+let b = a; // less specific
+let c = a; // more specific
+let d = 'world';
+let e = 'world';
+const addOrConcat = (a, b, c) => {
+    if (c === 'add')
+        return a + b;
+    return '' + a + b;
 };
-const logMsg = (message) => {
-    console.log(message);
-};
-logMsg('Hello!');
-logMsg(add(2, 3));
-let subtract = function (c, d) {
-    return c - d;
-};
-// interface mathFunction {
-//  (a:number, b:number): number
-// }
-let multiply = function (c, d) {
-    return c * d;
-};
-logMsg(multiply(2, 2));
-// otional parameters
-const addAll = (a, b, c) => {
-    if (typeof c !== 'undefined') {
-        return a + b + c;
-    }
-    return a + b;
-};
-// default param value
-const sumAll = (a = 10, b, c = 2) => {
-    return a + b + c;
-};
-logMsg(addAll(2, 3, 2));
-logMsg(addAll(2, 3));
-logMsg(sumAll(2, 3));
-logMsg(sumAll(undefined, 3));
-// Rest Parameters
-const total = (...nums) => {
-    return nums.reduce((prev, curr) => prev + curr);
-};
-logMsg(total(1, 2, 3, 4));
-const createError = (errMsg) => {
-    throw new Error(errMsg);
-};
-const infinite = () => {
-    let i = 1;
-    while (true) {
-        i++;
-        if (i > 100)
-            break;
-    }
-};
-const isNumber = (value) => {
-    return typeof value === 'number'
-        ? true : false;
-};
-const numberOrString = (value) => {
-    if (typeof value === 'string')
-        return 'string';
-    if (isNumber(value))
-        return 'number';
-    return createError('This should never happen!');
-};
+let myVal = addOrConcat(2, 2, 'concat');
+// Be careful! TS sees no problem - but a string is returned
+let nextVal = addOrConcat(2, 2, 'concat');
+10;
+10;
+// The DOM
+const img = document.querySelector('#myId');
+const myImg = document.getElementById('#img');
+// const nextImg = document.getElementById('#img')! as HTMLImageElement
+img.src;
+myImg.src;
