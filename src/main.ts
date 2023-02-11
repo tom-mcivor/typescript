@@ -1,90 +1,104 @@
-const echo =  <T>(arg: T): T => arg 
+// Utility Types
 
-const isObj = <T>(arg: T): boolean => {
-  return (typeof arg === 'object' && !Array.isArray)
-  (arg) && arg !== null
+// Partial
+
+interface Assingment {
+  studentId: string,
+  title: string,
+  grade: number,
+  verified?: boolean,
 }
 
-console.log(isfalse);
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-
-interface BoolCheck<T> {
- value: T,
- is: boolean,
-}
-
-const isTrue = <T>(arg: T): { arg: T, is: boolean} => {
-  if (Array.isArray(arg) && !arg.length) {
-    return { arg, is: !!arg}
-    
-  }
-
-  if (isObj(arg) && !Object.keys(arg as keyof T).length) {
-    return { value: arg, is: false}
-  }
-  return { value: arg, is: !!arg }
+const updateAssignment = (assign: Assingment, propsToUpdate: Partial<Assingmet>):Assingment => {
+  return { ...assign, ...}
 }
 
 
 
-console.log(isTrue(false));
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
+// Required and Readonly
 
-interface HasID {
-  id : number
+const recordAssignment>): Assignment => {
+  // send to database, ect.
+  return assign
 }
 
-const processUser = <T extends HasID>(user: T): T => {
+cosnt assignVerified: Readonly<Assignment> = { ...assignGraded, verified: true}
 
-  // process the user with logic here
-  return user
+recordAssignment({...assignGraded, verified: true})
+
+
+//Record
+const hexColorMap: Record<string, string> = {
+  red: "FF0000",
+  green: "00FF00",
+  blue: "000FF00"
+}
+
+const finalGrades: Record<Students, LetterGrades> = {
+  sara: "B",
+  Kelly: "U"
 }
 
 
+// Pick and Omit
 
-console.log(processUser);
+type AssingResult = Pick<Assingment, "studentId" | "grade">
 
-const getUsersProperty = <T extends HasID, K extends keyof T>(users: T[], key: K): T[K][] => {
-  return users.map(user => user[key])
+
+
+
+const score: AssingResult = {
+  student: "k123",
+  grade: 85,
 }
 
 
-const usersArray = [
- {
-  "id": 1,
-"name": "Lea"
- }
-]
+type AssingPreview = 
 
-console.log(getUsersProperty(usersArray, "email"))
+// Exclude and Extract
 
-console.log(getUsersProperty());
+type adjustedGrade = Exclude<LetterGrades, "U">
 
-class StateObject<T> {
-  private data: T
-  constructor(value: T) {
-    this.data = value
-  }
+type highGrades = Extract<LetterGrades, "A" | "B">
+
+//Nonnullable
+
+type AllPossibleGrades = 'Dave'
+
+// ReturnType
+
+type newAssign = { title: string, points: number}
+
+const createNewAssign = (title: string, points: number) => {
+  return { title, points}
+} 
+
+
+
+
+type NewAssign: NewAssign = createNewAssign("Utility Types", 100)
+console.log(tsAssign);
+
+
+// Parameters
+type AssignParams = Paraneters<typeof createNewAssigin
+
+
+console.log(tsAssign2);
+
+// Awaited - 
+
+
+
+const fetchUsers = async () : Promise<User[]> => {
+
+
+  const data = await fetch(
+    'https://jsonplaceholder.typicode.com/users'
+  ).then(res => {
+    return res.json()
+  })
 }
-
-const store = new StateObject("John")
-console.log(store.state)
-store.state = "Dave"
-// store.state = 12
-
-const myState = new StateObject<(string|number|boolean)[]>([15])
-myState.state = (['Dave'])
-
-
 
 
 

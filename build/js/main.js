@@ -1,54 +1,51 @@
 "use strict";
-const echo = (arg) => arg;
-const isObj = (arg) => {
-    return (typeof arg === 'object' && !Array.isArray)(arg) && arg !== null;
+// Utility Types
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
 };
-console.log(isfalse);
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-const isTrue = (arg) => {
-    if (Array.isArray(arg) && !arg.length) {
-        return { arg, is: !!arg };
-    }
-    if (isObj(arg) && !Object.keys(arg).length) {
-        return { value: arg, is: false };
-    }
-    return { value: arg, is: !!arg };
+const updateAssignment = (assign, propsToUpdate) => {
+    return Object.assign(Object.assign({}, assign), );
 };
-console.log(isTrue(false));
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-const processUser = (user) => {
-    // process the user with logic here
-    return user;
+// Required and Readonly
+const recordAssignment;
+ > ;
+Assignment => {
+    // send to database, ect.
+    return assign;
 };
-console.log(processUser);
-const getUsersProperty = (users, key) => {
-    return users.map(user => user[key]);
+cosnt;
+assignVerified: (Readonly) = Object.assign(Object.assign({}, assignGraded), { verified: true });
+recordAssignment(Object.assign(Object.assign({}, assignGraded), { verified: true }));
+//Record
+const hexColorMap = {
+    red: "FF0000",
+    green: "00FF00",
+    blue: "000FF00"
 };
-const usersArray = [
-    {
-        "id": 1,
-        "name": "Lea"
-    }
-];
-console.log(getUsersProperty(usersArray, "email"));
-console.log(getUsersProperty());
-class StateObject {
-    constructor(value) {
-        this.data = value;
-    }
-}
-const store = new StateObject("John");
-console.log(store.state);
-store.state = "Dave";
-// store.state = 12
-const myState = new StateObject([15]);
-myState.state = (['Dave']);
+const finalGrades = {
+    sara: "B",
+    Kelly: "U"
+};
+const score = {
+    student: "k123",
+    grade: 85,
+};
+adjustedGrade = (Exclude);
+const createNewAssign = (title, points) => {
+    return { title, points };
+};
+NewAssign = createNewAssign("Utility Types", 100);
+console.log(tsAssign);
+console.log(tsAssign2);
+// Awaited - 
+const fetchUsers = () => __awaiter(void 0, void 0, void 0, function* () {
+    const data = yield fetch('https://jsonplaceholder.typicode.com/users').then(res => {
+        return res.json();
+    });
+});
