@@ -1,23 +1,21 @@
 "use strict";
-// convert to more or less specific
-let a = 'hello';
-let b = a; // less specific
-let c = a; // more specific
-let d = 'world';
-let e = 'world';
-const addOrConcat = (a, b, c) => {
-    if (c === 'add')
-        return a + b;
-    return '' + a + b;
-};
-let myVal = addOrConcat(2, 2, 'concat');
-// Be careful! TS sees no problem - but a string is returned
-let nextVal = addOrConcat(2, 2, 'concat');
-10;
-10;
-// The DOM
-const img = document.querySelector('#myId');
-const myImg = document.getElementById('#img');
-// const nextImg = document.getElementById('#img')! as HTMLImageElement
-img.src;
-myImg.src;
+class Coder {
+    constructor(name, music, age, lang = 'Typescript') {
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.lang = lang;
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.age = age;
+        this.lang = lang;
+    }
+    getAge() {
+        return `Hello, I'm ${this.age}`;
+    }
+}
+const Dave = new Coder('Dave', 'Rock', 42);
+console.log(Dave.getAge());
+console.log(Dave.age);
+console.log(Dave.lang);

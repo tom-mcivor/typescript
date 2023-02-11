@@ -1,37 +1,27 @@
-type One = string
-type Two = string | number
-type Three = 'hello'
+class Coder {
 
-// convert to more or less specific
-let a: One = 'hello'
-let b = a as Two // less specific
-let c = a as Three // more specific
+  secondLang!: string
 
-let d = <One>'world'
-let e = <string | number>'world'
+  constructor(
+    public readonly name: string,
+    public music: string,
+    private age: number,
+    protected lang: string = 'Typescript'
+    ){
+    this.name = name
+    this.music = music 
+    this.age = age
+    this.age = age 
+    this.lang = lang
+  }
 
-const addOrConcat = (a: number, b: number, c: 'add' | 'concat'): number | string => {
-  if (c === 'add') return a + b
-  return '' + a + b
+  public getAge(){
+    return `Hello, I'm ${this.age}`
+  }
 }
 
-let myVal: string = addOrConcat(2,2,'concat') as string
-
-// Be careful! TS sees no problem - but a string is returned
-let nextVal: number = addOrConcat(2,2,'concat') as number
-
-10 as string 
-(10 as unknown) as string
-
-// The DOM
-const img = document.querySelector('#myId')!
-
-const myImg = document.getElementById('#img')! as HTMLImageElement
-// const nextImg = document.getElementById('#img')! as HTMLImageElement
-
-img.src
-
-myImg.src
-
-
+const Dave = new Coder('Dave', 'Rock', 42)
+console.log(Dave.getAge())
+console.log(Dave.age)
+console.log(Dave.lang)
 
